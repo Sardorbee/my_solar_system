@@ -14,15 +14,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-
-          child: Image.asset(AppImages.bgImage,fit: BoxFit.fill,),
+          child: Image.asset(
+            AppImages.bgImage,
+            fit: BoxFit.fill,
+          ),
         ),
-       const Scaffold(
+        const Scaffold(
           backgroundColor: Colors.transparent,
           appBar: CustomAppBar(
+            centerTitle: true,
             title: 'Solar System',
           ),
         ),

@@ -7,46 +7,51 @@ class CustomAppBar extends StatelessWidget implements PreferredSize {
     this.onTap,
     this.action,
     this.centerTitle,
-    this.title = "",
+    this.title = "",  this.leading,
   }) : super(key: key);
 
   final VoidCallback? onTap;
   final String title;
   final List<Widget>? action;
   final bool? centerTitle;
+  final Widget? leading;
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: 0.50,
-      child: Container(
-        clipBehavior: Clip.antiAlias,
-        decoration: ShapeDecoration(
-          color: Color(0xFF091422),
-          shadows: const [
-            BoxShadow(
-              color: Color(0xFF000000),
-              blurRadius: 16,
-              offset: Offset(0, -4),
-              spreadRadius: 0,
-            )
-          ],
-          shape: RoundedRectangleBorder(
-            side: BorderSide(width: 2),
-            borderRadius: BorderRadius.circular(28),
+    return Stack(
+      children: [
+        Opacity(
+          opacity: 0.5,
+
+          child: Container(
+            // clipBehavior: Clip.antiAlias,
+            decoration: ShapeDecoration(
+              color: const Color(0xFF091422),
+              shadows: const [
+                BoxShadow(
+                  color: Color(0xFF000000),
+                  blurRadius: 16,
+                  offset: Offset(0, -4),
+                  spreadRadius: 0,
+                )
+              ],
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(width: 2),
+                borderRadius: BorderRadius.circular(28),
+              ),
+            ),
           ),
         ),
-        child: AppBar(
+        AppBar(
           backgroundColor: Colors.transparent,
           scrolledUnderElevation: 0,
           actions: action,
           elevation: 0,
           centerTitle: centerTitle,
-          leading: null,
-          title: title.isNotEmpty
-              ? Text(
+          leading: leading,
 
-                  title,
+          title: title.isNotEmpty
+              ? Text(title,
             style: GoogleFonts.figtree(
               textStyle:const  TextStyle(
                 color: Colors.white,
@@ -55,10 +60,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSize {
                 fontWeight: FontWeight.w800,
               ),
             ),
-                )
+          )
               : null,
         ),
-      ),
+      ],
     );
   }
 
