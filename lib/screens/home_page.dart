@@ -35,17 +35,16 @@ class _HomePageState extends State<HomePage> {
                 leading: AppIcons.settings,
               ),
               Expanded(
-
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 4,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
                     itemBuilder: (context, index) {
-
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 20),
-                    child: Column1(),
-                  );
-                }),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 20),
+                        child: CustomPlanetItem(),
+                      );
+                    }),
               )
             ],
           ),
