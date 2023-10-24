@@ -1,4 +1,6 @@
 import 'package:cosmos_data/screens/widgets/custom_appbar.dart';
+import 'package:cosmos_data/screens/widgets/ex.dart';
+import 'package:cosmos_data/utils/app_icons.dart';
 import 'package:cosmos_data/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
@@ -22,11 +24,30 @@ class _HomePageState extends State<HomePage> {
             fit: BoxFit.fill,
           ),
         ),
-        const Scaffold(
+        Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: CustomAppBar(
-            centerTitle: true,
-            title: 'Solar System',
+          body: Column(
+            children: [
+              const CustomAppBar(
+                action: AppIcons.profile,
+                centerTitle: true,
+                title: 'Solar System',
+                leading: AppIcons.settings,
+              ),
+              Expanded(
+
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                    itemBuilder: (context, index) {
+
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 20),
+                    child: Column1(),
+                  );
+                }),
+              )
+            ],
           ),
         ),
       ],
