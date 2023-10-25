@@ -118,7 +118,12 @@ class CustomAppBar extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Center(child: SvgPicture.asset(action!)),
+                  Center(
+                      child: SvgPicture.asset(
+                    action!,
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  )),
                 ],
               ),
             ),

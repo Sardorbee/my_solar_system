@@ -36,8 +36,7 @@ class _TabBoxScreenState extends State<TabBoxScreen> {
               FavouriteScreen(),
             ],
           ),
-          bottomNavigationBar:
-          Opacity(
+          bottomNavigationBar: Opacity(
             opacity: 0.70,
             child: Container(
               decoration: ShapeDecoration(
@@ -55,30 +54,29 @@ class _TabBoxScreenState extends State<TabBoxScreen> {
                   )
                 ],
               ),
-            child: BottomNavigationBar(
-
-              selectedItemColor: Color(0xff11DCE8),
-              unselectedItemColor: Colors.white10,
-              backgroundColor: Colors.transparent,
-              items: [
-                BottomNavigationBarItem(
-                    icon: SvgPicture.asset(AppIcons.homeOff), label: "Home"),
-                BottomNavigationBarItem(
-                    icon: SvgPicture.asset(AppIcons.favouriteOff),
-                    label: "Favourite"),
-              ],
-              currentIndex: currentIndex,
-              onTap: (index) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
-            ),),
-
+              child: BottomNavigationBar(
+                selectedItemColor: const Color(0xff11DCE8),
+                unselectedItemColor: Colors.white10,
+                backgroundColor: Colors.transparent,
+                items: [
+                  BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(AppIcons.homeOn),
+                      icon: SvgPicture.asset(AppIcons.homeOff),
+                      label: "Home"),
+                  BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(AppIcons.favouriteOn),
+                      icon: SvgPicture.asset(AppIcons.favouriteOff),
+                      label: "Favourite"),
+                ],
+                currentIndex: currentIndex,
+                onTap: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+              ),
+            ),
           ),
-
-
-
         ),
       ],
     );

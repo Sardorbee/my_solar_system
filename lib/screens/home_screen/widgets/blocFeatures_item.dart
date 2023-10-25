@@ -3,7 +3,8 @@ import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
 class BlockFeatured extends StatelessWidget {
-  const BlockFeatured({super.key});
+  VoidCallback onTap;
+   BlockFeatured({super.key,required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +78,10 @@ class BlockFeatured extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const SizedBox(
-                              width: 200,
-                              height: 83,
-                              child: Text(
+                             SizedBox(
+                              width: responsibleSize(context: context,width: 180),
+                              height: responsibleSize(context: context,height: 83),
+                              child:const Text(
                                 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, only being larger than Mercury. In the English language, Mars is named for the Roman god of war.',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -91,20 +92,22 @@ class BlockFeatured extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 1),
                             Row(
-                              mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                const Text(
-                                  'Details',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontFamily: 'Figtree',
-                                    fontWeight: FontWeight.w700,
-                                    height: 0,
+                                InkWell(
+                                  onTap: onTap,
+                                  child: const Text(
+                                    'Details',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontFamily: 'Figtree',
+                                      fontWeight: FontWeight.w700,
+                                      height: 0,
+                                    ),
                                   ),
                                 ),
                                 const SizedBox(width: 6),
