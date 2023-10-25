@@ -5,19 +5,21 @@ double? responsibleSize({
   double? width,
   required BuildContext context,
 }) {
-  double screenHeight = MediaQuery.of(context).size.height;
-  double screenWidth = MediaQuery.of(context).size.width;
+  double screenHeight = MediaQuery.of(context).size.height/100;
+  double screenWidth = MediaQuery.of(context).size.width/100;
+  print("============${screenHeight}      ${screenWidth}==================");
 
-  double figmaDesignHeight = 812.0;
-  double figmaDesignWidth = 375.0;
-
-  double heightFactor = screenHeight / figmaDesignHeight;
-  double widthFactor = screenWidth / figmaDesignWidth;
+  double figmaDesignHeight = 812.0/100;
+  double figmaDesignWidth = 375.0/100;
 
   if (height == null && width != null) {
-    return width * widthFactor;
+    double widthFactor = width / figmaDesignWidth;
+
+    return screenWidth * widthFactor;
   } else if (width == null && height != null) {
-    return height * heightFactor;
+    double heightFactor = height / figmaDesignHeight ;
+
+    return screenHeight * heightFactor;
   } else {
     return null;
   }

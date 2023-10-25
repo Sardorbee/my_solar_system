@@ -3,7 +3,9 @@ import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
 class CustomPlanetItem extends StatelessWidget {
-  const CustomPlanetItem({super.key});
+  const CustomPlanetItem({super.key, required this.name, required this.images});
+  final String name;
+  final String images;
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +41,16 @@ class CustomPlanetItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              AppImages.mars,
+              images,
               height: MediaQuery.of(context).size.height * 0.033,
             ),
             const SizedBox(width: 8),
-            const Text(
-              'Mercury',
-              style: TextStyle(
+             Text(
+              name,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 12,
-                fontFamily: 'Figtree',
+                fontFamily: 'Fig-tree',
                 fontWeight: FontWeight.w700,
                 height: 0,
               ),

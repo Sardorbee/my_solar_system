@@ -1,7 +1,10 @@
+import 'package:cosmos_data/screens/widgets/blocFeatures_item.dart';
+import 'package:cosmos_data/screens/widgets/block_text.dart';
 import 'package:cosmos_data/screens/widgets/custom_appbar.dart';
-import 'package:cosmos_data/screens/widgets/ex.dart';
+import 'package:cosmos_data/screens/widgets/custom_planetItem.dart';
 import 'package:cosmos_data/utils/app_icons.dart';
 import 'package:cosmos_data/utils/app_images.dart';
+import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,18 +37,25 @@ class _HomePageState extends State<HomePage> {
                 title: 'Solar System',
                 leading: AppIcons.settings,
               ),
-              Expanded(
+              SizedBox(
+                height: responsibleSize(context: context, height: 100),
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 4,
+                    itemCount: AppImages.listImages.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 20),
-                        child: CustomPlanetItem(),
+                        child: CustomPlanetItem(
+                          name: AppImages.listNames[index],
+                          images: AppImages.listImages[index],
+                        ),
                       );
                     }),
-              )
+              ),
+              const BlockFeatured(),
+            const  SizedBox(height: 26,),
+              const BlockText()
             ],
           ),
         ),
