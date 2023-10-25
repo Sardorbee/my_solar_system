@@ -11,7 +11,6 @@ class BlockFeatured extends StatelessWidget {
       width: responsibleSize(context: context, width: 300),
       height: responsibleSize(context: context, height: 219),
       child: Stack(
-        alignment: Alignment.center,
         children: [
           Opacity(
             opacity: 0.70,
@@ -34,12 +33,13 @@ class BlockFeatured extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding:
+                EdgeInsets.all(responsibleSize(context: context, width: 20)!),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-              const  Text(
+                const Text(
                   'Planet of the day',
                   style: TextStyle(
                     color: Colors.white,
@@ -55,10 +55,10 @@ class BlockFeatured extends StatelessWidget {
                   children: [
                     Image.asset(
                       AppImages.mars,
-                      width: 60,
+                      width: responsibleSize(context: context, width: 60),
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
@@ -70,7 +70,7 @@ class BlockFeatured extends StatelessWidget {
                             fontWeight: FontWeight.w800,
                             height: 0.07,
                           ),
-                        ),//mars
+                        ), //mars
                         const SizedBox(height: 8),
                         Column(
                           mainAxisSize: MainAxisSize.min,
@@ -113,7 +113,10 @@ class BlockFeatured extends StatelessWidget {
                                   height: 24,
                                   clipBehavior: Clip.antiAlias,
                                   decoration: const BoxDecoration(),
-                                  child: const Icon(Icons.arrow_right_alt_outlined,color: Colors.white,),
+                                  child: const Icon(
+                                    Icons.arrow_right_alt_outlined,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ],
                             ),

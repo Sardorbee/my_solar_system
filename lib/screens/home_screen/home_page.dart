@@ -1,7 +1,8 @@
-import 'package:cosmos_data/screens/widgets/blocFeatures_item.dart';
-import 'package:cosmos_data/screens/widgets/block_text.dart';
-import 'package:cosmos_data/screens/widgets/custom_appbar.dart';
-import 'package:cosmos_data/screens/widgets/custom_planetItem.dart';
+import 'package:cosmos_data/screens/home_screen/widgets/blocFeatures_item.dart';
+import 'package:cosmos_data/screens/home_screen/widgets/block_text.dart';
+import 'package:cosmos_data/screens/home_screen/widgets/custom_appbar.dart';
+import 'package:cosmos_data/screens/home_screen/widgets/custom_planetItem.dart';
+
 import 'package:cosmos_data/utils/app_icons.dart';
 import 'package:cosmos_data/utils/app_images.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
@@ -54,7 +55,9 @@ class _HomePageState extends State<HomePage> {
                     }),
               ),
               const BlockFeatured(),
-            const  SizedBox(height: 26,),
+              const SizedBox(
+                height: 26,
+              ),
               const BlockText()
             ],
           ),
