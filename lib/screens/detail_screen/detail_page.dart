@@ -1,8 +1,8 @@
 import 'package:cosmos_data/screens/detail_screen/widgets/custom_appbar_detail.dart';
+import 'package:cosmos_data/screens/detail_screen/widgets/detail_parametr_item.dart';
 import 'package:cosmos_data/utils/app_icons.dart';
 import 'package:cosmos_data/utils/app_images.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,65 +25,74 @@ class DetailPage extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          body: Stack(
             children: [
-              const CustomAppBarDetail(
-                action: AppIcons.favouriteOff,
-                centerTitle: true,
-                leading: AppIcons.arrowBack,
-              ),
-              Stack(
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Opacity(
-                    opacity: 0.7,
-                    child: Container(
-                      width: responsibleSize(context: context, width: 375),
-                      height: responsibleSize(context: context, height: 554),
-                      decoration: ShapeDecoration(
-                        color: Color(0xFF091422),
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(28),
-                              topRight: Radius.circular(28)),
+                  const CustomAppBarDetail(
+                    action: AppIcons.favouriteOff,
+                    centerTitle: true,
+                    leading: AppIcons.arrowBack,
+                  ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Opacity(
+                        opacity: 0.7,
+                        child: Container(
+                          width: responsibleSize(context: context, width: 375),
+                          height:
+                              responsibleSize(context: context, height: 554),
+                          decoration: const ShapeDecoration(
+                            color: Color(0xFF091422),
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(width: 1),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(28),
+                                  topRight: Radius.circular(28)),
+                            ),
+                            shadows: [
+                              BoxShadow(
+                                color: Color(0xFF000000),
+                                blurRadius: 16,
+                                offset: Offset(0, -4),
+                                spreadRadius: 0,
+                              )
+                            ],
+                          ),
                         ),
-                        shadows: [
-                          BoxShadow(
-                            color: Color(0xFF000000),
-                            blurRadius: 16,
-                            offset: Offset(0, -4),
-                            spreadRadius: 0,
-                          )
-                        ],
                       ),
-                    ),
+                      DetailParametrItem(),
+
+                    ],
                   ),
                 ],
-              )
-            ],
-          ),
-        ),
-        Positioned(
-          left: MediaQuery.of(context).size.width / 3.3,
-          top: MediaQuery.of(context).size.height / 5,
-          child: Column(
-            children: [
-              Image.asset(
-                AppImages.earth,
-                scale: 1.5,
               ),
-              Text(
-                "Earth",
-                style: GoogleFonts.figtree(
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w800,
-                  ),
+              Positioned(
+                left: MediaQuery.of(context).size.width / 3.3,
+                top: MediaQuery.of(context).size.height / 5,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      AppImages.earth,
+                      scale: 1.5,
+                    ),
+                    Text(
+                      "Earth",
+                      style: GoogleFonts.figtree(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 32,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
+
             ],
           ),
         ),
