@@ -2,9 +2,10 @@ import 'package:cosmos_data/utils/app_images.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BlockFeatured extends StatelessWidget {
   VoidCallback onTap;
-   BlockFeatured({super.key,required this.onTap});
+  BlockFeatured({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +79,12 @@ class BlockFeatured extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                             SizedBox(
-                              width: responsibleSize(context: context,width: 180),
-                              height: responsibleSize(context: context,height: 83),
-                              child:const Text(
+                            SizedBox(
+                              width:
+                                  responsibleSize(context: context, width: 180),
+                              height:
+                                  responsibleSize(context: context, height: 83),
+                              child: const Text(
                                 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, only being larger than Mercury. In the English language, Mars is named for the Roman god of war.',
                                 style: TextStyle(
                                   color: Colors.white,

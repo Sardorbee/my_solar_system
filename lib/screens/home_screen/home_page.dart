@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           BlockFeatured(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (builder) => DetailPage()));
+                  MaterialPageRoute(builder: (builder) => const DetailPage()));
             },
           ),
           SizedBox(
