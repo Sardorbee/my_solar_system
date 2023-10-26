@@ -63,7 +63,8 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      DetailParametrItem(),
+                     const DetailParamItem(),
+
 
                     ],
                   ),

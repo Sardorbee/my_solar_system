@@ -3,16 +3,17 @@ import 'package:cosmos_data/utils/app_icons.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
-class DetailParametrItem extends StatelessWidget {
-  const DetailParametrItem({super.key});
+class DetailParamItem extends StatelessWidget {
+  const DetailParamItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
-          height: responsibleSize(context: context, height: 32),
+          height: MediaQuery.of(context).size.height > 800
+              ? responsibleSize(context: context, height: 90)
+              : responsibleSize(context: context, height: 120),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,6 +63,57 @@ class DetailParametrItem extends StatelessWidget {
               dataText: '5.97',
             ),
           ],
+        ),
+        SizedBox(
+          height: responsibleSize(context: context, height: 54),
+        ),
+        InkWell(
+          onTap: () {},
+          child: Opacity(
+            opacity: 0.80,
+            child: Container(
+              width: responsibleSize(context: context, width: 140),
+              height: responsibleSize(context: context, height: 60),
+              decoration: ShapeDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment(-0.69, -0.72),
+                  end: Alignment(0.69, 0.72),
+                  colors: [
+                    Color(0xFF00E5E5),
+                    Color(0xFF72A4F1),
+                    Color(0xFFE860FF)
+                  ],
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(28),
+                ),
+                shadows: const [
+                  BoxShadow(
+                    color: Color(0xFF000000),
+                    blurRadius: 16,
+                    offset: Offset(0, -4),
+                    spreadRadius: 0,
+                  )
+                ],
+              ),
+              child: const Center(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Text(
+                    'Visit',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontFamily: 'Figtree',
+                      fontWeight: FontWeight.w800,
+                      height: 0.04,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
       ],
     );
