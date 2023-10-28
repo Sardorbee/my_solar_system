@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:cosmos_data/bloc/planet_bloc/planetbloc_bloc.dart';
+import 'package:cosmos_data/bloc/planet_bloc/planet_bloc.dart';
 import 'package:cosmos_data/data/models/planet_model.dart';
 import 'package:cosmos_data/screens/detail_screen/detail_page.dart';
 import 'package:cosmos_data/screens/home_screen/widgets/blocFeatures_item.dart';
@@ -58,20 +58,33 @@ class _HomePageState extends State<HomePage> {
                                 responsibleSize(context: context, width: 12)!,
                             vertical:
                                 responsibleSize(context: context, height: 20)!),
-                        child: CustomPlanetItem(
-                          name: state.planets[index].name,
-                          images: AppImages.listImages[index],
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (builder) => DetailPage(
+                                planet: state.planets[index],
+                              ),
+                            ),
+                          ),
+                          child: CustomPlanetItem(
+                            name: state.planets[index].name,
+                            images: state.planets[index].image,
+                          ),
                         ),
                       );
                     }),
               ),
-              BlockFeatured(
+              PlanetOfTheDayWidget(
                 planetModel: randomPlanet,
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (builder) => const DetailPage()));
+                          builder: (builder) => DetailPage(
+                                planet: randomPlanet,
+                              )));
                 },
               ),
               SizedBox(

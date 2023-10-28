@@ -1,13 +1,14 @@
+import 'package:cosmos_data/data/models/planet_model.dart';
 import 'package:cosmos_data/screens/detail_screen/widgets/custom_appbar_detail.dart';
 import 'package:cosmos_data/screens/detail_screen/widgets/detail_parametr_item.dart';
 import 'package:cosmos_data/utils/app_icons.dart';
-import 'package:cosmos_data/utils/app_images.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  final PlanetModel planet;
+  const DetailPage({super.key, required this.planet});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,9 @@ class DetailPage extends StatelessWidget {
           left: -100,
           child: Transform.scale(
             scale: 1.6,
-            child: Image.asset(
-              AppImages.planet4x,
+            child: Image.network(
+              planet.image,
+              scale: 1,
             ),
           ),
         ),
@@ -30,7 +32,7 @@ class DetailPage extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   CustomAppBarDetail(
+                  CustomAppBarDetail(
                     action: AppIcons.favouriteOff,
                     centerTitle: true,
                     leading: AppIcons.arrowBack,
@@ -46,7 +48,7 @@ class DetailPage extends StatelessWidget {
                         child: Container(
                           width: responsibleSize(context: context, width: 375),
                           height:
-                              responsibleSize(context: context, height: 554),
+                              responsibleSize(context: context, height: 600),
                           decoration: const ShapeDecoration(
                             color: Color(0xFF091422),
                             shape: RoundedRectangleBorder(
@@ -66,9 +68,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                     const DetailParamItem(),
-
-
+                      DetailParamItem(planet: planet),
                     ],
                   ),
                 ],
@@ -78,12 +78,12 @@ class DetailPage extends StatelessWidget {
                 top: MediaQuery.of(context).size.height / 5,
                 child: Column(
                   children: [
-                    Image.asset(
-                      AppImages.earth,
-                      scale: 1.5,
+                    Image.network(
+                      planet.image,
+                      scale: 3.5,
                     ),
                     Text(
-                      "Earth",
+                      planet.name,
                       style: GoogleFonts.figtree(
                         textStyle: const TextStyle(
                           color: Colors.white,
@@ -96,7 +96,6 @@ class DetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-
             ],
           ),
         ),

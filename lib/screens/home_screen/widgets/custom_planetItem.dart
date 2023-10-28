@@ -1,4 +1,3 @@
-import 'package:cosmos_data/utils/app_images.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
@@ -40,16 +39,13 @@ class CustomPlanetItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              images,
-              height: MediaQuery.of(context).size.height * 0.033,
-            ),
+            Image.network(images,height: MediaQuery.of(context).size.height * 0.033,),
             const SizedBox(width: 8),
              Text(
               name,
-              style: const TextStyle(
+              style:  TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: responsibleSize(context: context, height: 15),
                 fontFamily: 'Fig-tree',
                 fontWeight: FontWeight.w700,
                 height: 0,

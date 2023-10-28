@@ -5,8 +5,8 @@ import 'package:cosmos_data/data/models/planet_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
-part 'planetbloc_event.dart';
-part 'planetbloc_state.dart';
+part 'planet_event.dart';
+part 'planet_state.dart';
 
 class PlanetBloc extends Bloc<PlanetBlocEvent, PlanetBlocState> {
   PlanetBloc() : super(PlanetBlocState(planets: [], status: "Pure")) {

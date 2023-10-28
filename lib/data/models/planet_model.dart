@@ -1,4 +1,3 @@
-
 class PlanetModel {
   String name;
   double mass;
@@ -9,6 +8,8 @@ class PlanetModel {
   double distanceLightYear;
   int hostStarMass;
   int hostStarTemperature;
+  String description;
+  String image;
 
   PlanetModel({
     required this.name,
@@ -20,18 +21,21 @@ class PlanetModel {
     required this.distanceLightYear,
     required this.hostStarMass,
     required this.hostStarTemperature,
+    required this.description,
+    required this.image,
   });
 
   factory PlanetModel.fromJson(Map<String, dynamic> json) => PlanetModel(
-    name: json["name"],
-    mass: json["mass"]?.toDouble(),
-    radius: json["radius"]?.toDouble(),
-    period: json["period"]?.toDouble(),
-    semiMajorAxis: json["semi_major_axis"]?.toDouble(),
-    temperature: json["temperature"],
-    distanceLightYear: json["distance_light_year"]?.toDouble(),
-    hostStarMass: json["host_star_mass"],
-    hostStarTemperature: json["host_star_temperature"],
-  );
-
+        name: json["name"],
+        mass: json["mass"]?.toDouble(),
+        radius: json["radius"]?.toDouble(),
+        period: json["period"]?.toDouble(),
+        semiMajorAxis: json["semi_major_axis"]?.toDouble(),
+        temperature: json["temperature"],
+        distanceLightYear: json["distance_light_year"]?.toDouble(),
+        hostStarMass: json["host_star_mass"],
+        hostStarTemperature: json["host_star_temperature"],
+        description: json["description"],
+        image: json["image"],
+      );
 }

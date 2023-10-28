@@ -1,4 +1,4 @@
-part of 'planetbloc_bloc.dart';
+part of 'planet_bloc.dart';
 
 @immutable
 abstract class PlanetBlocEvent {}

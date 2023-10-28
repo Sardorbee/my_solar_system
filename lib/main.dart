@@ -1,5 +1,4 @@
-import 'package:cosmos_data/bloc/planet_bloc/planetbloc_bloc.dart';
-import 'package:cosmos_data/screens/home_screen/home_page.dart';
+import 'package:cosmos_data/bloc/planet_bloc/planet_bloc.dart';
 import 'package:cosmos_data/screens/tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -1,10 +1,16 @@
+import 'package:cosmos_data/data/models/planet_model.dart';
 import 'package:cosmos_data/screens/detail_screen/widgets/one_param_item.dart';
 import 'package:cosmos_data/utils/app_icons.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
 class DetailParamItem extends StatelessWidget {
-  const DetailParamItem({super.key});
+  final PlanetModel planet;
+
+  const DetailParamItem({
+    super.key,
+    required this.planet,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +18,8 @@ class DetailParamItem extends StatelessWidget {
       children: [
         SizedBox(
           height: MediaQuery.of(context).size.height > 800
-              ? responsibleSize(context: context, height: 90)
-              : responsibleSize(context: context, height: 120),
+              ? responsibleSize(context: context, height: 40)
+              : responsibleSize(context: context, height: 70),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -22,19 +28,19 @@ class DetailParamItem extends StatelessWidget {
               icon: AppIcons.mass,
               title: 'Mass',
               subtitle: '(1024kg)',
-              dataText: '5.97',
+              dataText: planet.mass.toString(),
             ),
             OneParamItem(
               icon: AppIcons.gravity,
               title: 'Gravity',
               subtitle: '(m/s2)',
-              dataText: '9.8',
+              dataText: planet.hostStarMass.toString(),
             ),
             OneParamItem(
               icon: AppIcons.day,
-              title: 'Day',
-              subtitle: '(hours)',
-              dataText: '24',
+              title: 'Year',
+              subtitle: '(days)',
+              dataText: planet.period.toString(),
             ),
           ],
         ),
@@ -48,19 +54,19 @@ class DetailParamItem extends StatelessWidget {
               icon: AppIcons.velocity,
               title: ' Esc. Velocity ',
               subtitle: '(km/s)',
-              dataText: '11.2',
+              dataText: planet.semiMajorAxis.toString(),
             ),
             OneParamItem(
               icon: AppIcons.temprature,
               title: 'Mean',
               subtitle: 'Temp (C)',
-              dataText: '15',
+              dataText: planet.temperature.toString(),
             ),
             OneParamItem(
               icon: AppIcons.distance,
               title: 'Distance from',
               subtitle: 'Sun (106 km)',
-              dataText: '5.97',
+              dataText: planet.distanceLightYear.toString(),
             ),
           ],
         ),
