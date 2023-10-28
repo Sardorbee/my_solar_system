@@ -1,10 +1,14 @@
+import 'package:cosmos_data/bloc/planet_bloc/planetbloc_bloc.dart';
 import 'package:cosmos_data/screens/home_screen/home_page.dart';
 import 'package:cosmos_data/screens/tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => PlanetBloc())],
+      child: const MyApp()));
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,

@@ -1,3 +1,4 @@
+import 'package:cosmos_data/data/models/planet_model.dart';
 import 'package:cosmos_data/utils/app_images.dart';
 import 'package:cosmos_data/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,8 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class BlockFeatured extends StatelessWidget {
   VoidCallback onTap;
-  BlockFeatured({super.key, required this.onTap});
+  PlanetModel planetModel;
+  BlockFeatured({super.key, required this.onTap, required this.planetModel});
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +65,9 @@ class BlockFeatured extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Mars',
-                          style: TextStyle(
+                        Text(
+                          planetModel.name,
+                          style: const TextStyle(
                             color: Color(0xFF11DCE8),
                             fontSize: 16,
                             fontFamily: 'Fig-tree',

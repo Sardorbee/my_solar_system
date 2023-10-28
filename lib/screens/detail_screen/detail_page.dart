@@ -30,10 +30,13 @@ class DetailPage extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const CustomAppBarDetail(
+                   CustomAppBarDetail(
                     action: AppIcons.favouriteOff,
                     centerTitle: true,
                     leading: AppIcons.arrowBack,
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                   ),
                   Stack(
                     alignment: Alignment.center,

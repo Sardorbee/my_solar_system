@@ -24,34 +24,37 @@ class CustomAppBarDetail extends StatelessWidget {
         horizontal: MediaQuery.of(context).size.height * 0.043,
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            Opacity(
-              opacity: 0.3,
-              child: Container(
-                height: 44,
-                width: 44,
-                clipBehavior: Clip.antiAlias,
-                decoration: ShapeDecoration(
-                  color: Colors.white60,
-                  shadows: const [
-                    BoxShadow(
-                      color: Colors.white,
-                      blurRadius: 16,
-                      offset: Offset(0, -4),
-                      spreadRadius: 0,
-                    )
-                  ],
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(width: 1.5,color: Colors.white),
-                    borderRadius: BorderRadius.circular(28),
+        InkWell(
+          onTap: onTap,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Opacity(
+                opacity: 0.3,
+                child: Container(
+                  height: 44,
+                  width: 44,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: ShapeDecoration(
+                    color: Colors.white60,
+                    shadows: const [
+                      BoxShadow(
+                        color: Colors.white,
+                        blurRadius: 16,
+                        offset: Offset(0, -4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(width: 1.5, color: Colors.white),
+                      borderRadius: BorderRadius.circular(28),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Center(child: SvgPicture.asset(leading)),
-          ],
+              Center(child: SvgPicture.asset(leading)),
+            ],
+          ),
         ),
         Visibility(
           visible: action?.isNotEmpty ?? false,
@@ -75,7 +78,7 @@ class CustomAppBarDetail extends StatelessWidget {
                       )
                     ],
                     shape: RoundedRectangleBorder(
-                      side: const BorderSide(width: 1.5,color: Colors.white),
+                      side: const BorderSide(width: 1.5, color: Colors.white),
                       borderRadius: BorderRadius.circular(28),
                     ),
                   ),

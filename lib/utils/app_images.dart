@@ -10,12 +10,15 @@ class AppImages {
   static const String jupiter = "assets/image/jupiter.png";
 
   // listlar
-  static const List<String> listImages = [earth, mars, venus, mercury, jupiter];
-  static const List<String> listNames = [
-    "Earth",
-    "Mars",
-    "Venus",
-    "Mercury",
-    "Jupiter"
+  static const List<String> listImages = [
+    earth,
+    mars,
+    venus,
+    earth,
+    mars,
+    venus,
+    mercury,
+    jupiter,
+    jupiter
   ];
 }
