@@ -7,6 +7,7 @@ import 'package:my_system/screens/home_screen/widgets/blocFeatures_item.dart';
 import 'package:my_system/screens/home_screen/widgets/block_text.dart';
 import 'package:my_system/screens/home_screen/widgets/custom_appbar.dart';
 import 'package:my_system/screens/home_screen/widgets/custom_planetItem.dart';
+import 'package:my_system/screens/splash/widgets/circular_animation.dart';
 import 'package:my_system/utils/app_icons.dart';
 import 'package:my_system/utils/app_images.dart';
 import 'package:my_system/utils/responsive_size.dart';
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, state) {
           if (state.planets.isEmpty) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularSplash(strokeWidth: 4),
             );
           }
 

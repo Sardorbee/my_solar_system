@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:my_system/data/models/planet_model.dart';
 import 'package:my_system/screens/detail_screen/widgets/custom_appbar_detail.dart';
 import 'package:my_system/screens/detail_screen/widgets/detail_parametr_item.dart';
@@ -19,9 +20,8 @@ class DetailPage extends StatelessWidget {
           left: -100,
           child: Transform.scale(
             scale: 1.6,
-            child: Image.network(
-              planet.image,
-              scale: 1,
+            child: CachedNetworkImage(
+              imageUrl: planet.image,
             ),
           ),
         ),
@@ -33,7 +33,6 @@ class DetailPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomAppBarDetail(
-                    action: AppIcons.favouriteOff,
                     centerTitle: true,
                     leading: AppIcons.arrowBack,
                     onTap: () {
@@ -78,9 +77,9 @@ class DetailPage extends StatelessWidget {
                 top: MediaQuery.of(context).size.height / 5,
                 child: Column(
                   children: [
-                    Image.network(
-                      planet.image,
-                      scale: 3.5,
+                    CachedNetworkImage(
+                      imageUrl: planet.image,
+                      width: MediaQuery.of(context).size.width *0.4,
                     ),
                     Text(
                       planet.name,

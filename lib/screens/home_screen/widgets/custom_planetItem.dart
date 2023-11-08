@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:my_system/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
@@ -39,11 +40,14 @@ class CustomPlanetItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(images,height: MediaQuery.of(context).size.height * 0.033,),
+            CachedNetworkImage(
+              imageUrl: images,
+              height: MediaQuery.of(context).size.height * 0.033,
+            ),
             const SizedBox(width: 8),
-             Text(
+            Text(
               name,
-              style:  TextStyle(
+              style: TextStyle(
                 color: Colors.white,
                 fontSize: responsibleSize(context: context, height: 15),
                 fontFamily: 'Fig-tree',

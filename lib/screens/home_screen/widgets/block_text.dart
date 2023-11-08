@@ -43,7 +43,6 @@ class BlockText extends StatelessWidget {
                  style: TextStyle(
                    color: Colors.white,
                    fontSize: 16,
-                   fontFamily: 'Fig-tree',
                    fontWeight: FontWeight.w800,
                    height: 0.07,
                  ),
@@ -53,7 +52,6 @@ class BlockText extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 12,
-                    fontFamily: 'Fig tree',
                     fontWeight: FontWeight.w400,
                     height: 0,
                   ),

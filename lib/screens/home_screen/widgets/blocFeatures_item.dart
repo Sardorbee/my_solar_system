@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:my_system/data/models/planet_model.dart';
 import 'package:my_system/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,8 @@ import 'package:flutter/material.dart';
 class PlanetOfTheDayWidget extends StatelessWidget {
   VoidCallback onTap;
   PlanetModel planetModel;
-  PlanetOfTheDayWidget({super.key, required this.onTap, required this.planetModel});
+  PlanetOfTheDayWidget(
+      {super.key, required this.onTap, required this.planetModel});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,10 @@ class PlanetOfTheDayWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.network(planetModel.image,width: responsibleSize(context: context, width: 120)!,),
+                    CachedNetworkImage(
+                      imageUrl: planetModel.image,
+                      width: responsibleSize(context: context, width: 120)!,
+                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +83,8 @@ class PlanetOfTheDayWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             SizedBox(
-                              width: responsibleSize(context: context, width: 120),
+                              width:
+                                  responsibleSize(context: context, width: 120),
                               child: Text(
                                 planetModel.description,
                                 style: const TextStyle(

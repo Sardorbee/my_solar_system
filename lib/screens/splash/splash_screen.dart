@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height / 3,
                       width: MediaQuery.of(context).size.height / 3,
-                      child: const CircularSplash(),
+                      child: const CircularSplash(strokeWidth: 10),
                     ),
                   ),
                   Align(

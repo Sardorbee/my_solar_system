@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CircularSplash extends StatefulWidget {
-  const CircularSplash({super.key});
+  const CircularSplash({super.key, required this.strokeWidth});
+  final double strokeWidth;
 
   @override
   _CircularSplashState createState() => _CircularSplashState();
@@ -24,9 +25,9 @@ class _CircularSplashState extends State<CircularSplash>
   Widget build(BuildContext context) {
     return RotationTransition(
       turns: _controller,
-      child: const CircularProgressIndicator(
+      child:  CircularProgressIndicator(
         color: Colors.white,
-        strokeWidth: 10,
+        strokeWidth: widget.strokeWidth,
 
 
         // semanticsValue: "${widget.state.progress * 100} %",
