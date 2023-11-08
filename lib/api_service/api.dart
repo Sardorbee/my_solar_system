@@ -1,4 +1,4 @@
-import 'package:cosmos_data/data/models/planet_model.dart';
+import 'package:my_system/data/models/planet_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 

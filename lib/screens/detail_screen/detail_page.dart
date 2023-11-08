@@ -1,8 +1,8 @@
-import 'package:cosmos_data/data/models/planet_model.dart';
-import 'package:cosmos_data/screens/detail_screen/widgets/custom_appbar_detail.dart';
-import 'package:cosmos_data/screens/detail_screen/widgets/detail_parametr_item.dart';
-import 'package:cosmos_data/utils/app_icons.dart';
-import 'package:cosmos_data/utils/responsive_size.dart';
+import 'package:my_system/data/models/planet_model.dart';
+import 'package:my_system/screens/detail_screen/widgets/custom_appbar_detail.dart';
+import 'package:my_system/screens/detail_screen/widgets/detail_parametr_item.dart';
+import 'package:my_system/utils/app_icons.dart';
+import 'package:my_system/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

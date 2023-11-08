@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:cosmos_data/api_service/api.dart';
-import 'package:cosmos_data/data/models/planet_model.dart';
+import 'package:my_system/api_service/api.dart';
+import 'package:my_system/data/models/planet_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 

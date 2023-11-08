@@ -1,4 +1,4 @@
-import 'package:cosmos_data/utils/responsive_size.dart';
+import 'package:my_system/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
 class CustomPlanetItem extends StatelessWidget {

@@ -8,17 +8,5 @@ class AppImages {
   static const String mercury = "assets/image/mercury.png";
   static const String venus = "assets/image/mercury.png";
   static const String jupiter = "assets/image/jupiter.png";
-
-  // listlar
-  static const List<String> listImages = [
-    earth,
-    mars,
-    venus,
-    earth,
-    mars,
-    venus,
-    mercury,
-    jupiter,
-    jupiter
-  ];
+  static const String logo = "assets/image/logo.png";
 }

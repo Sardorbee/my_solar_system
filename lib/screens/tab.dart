@@ -1,7 +1,7 @@
-import 'package:cosmos_data/screens/favourite/favourite.dart';
-import 'package:cosmos_data/screens/home_screen/home_page.dart';
-import 'package:cosmos_data/utils/app_icons.dart';
-import 'package:cosmos_data/utils/app_images.dart';
+import 'package:my_system/screens/all_planets/all_planets.dart';
+import 'package:my_system/screens/home_screen/home_page.dart';
+import 'package:my_system/utils/app_icons.dart';
+import 'package:my_system/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

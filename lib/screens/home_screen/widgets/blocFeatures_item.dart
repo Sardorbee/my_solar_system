@@ -1,6 +1,5 @@
-import 'package:cosmos_data/data/models/planet_model.dart';
-import 'package:cosmos_data/utils/app_images.dart';
-import 'package:cosmos_data/utils/responsive_size.dart';
+import 'package:my_system/data/models/planet_model.dart';
+import 'package:my_system/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -57,7 +56,7 @@ class PlanetOfTheDayWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.network(planetModel.image,width: 60,),
+                    Image.network(planetModel.image,width: responsibleSize(context: context, width: 120)!,),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,

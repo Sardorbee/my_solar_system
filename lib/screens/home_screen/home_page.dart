@@ -1,15 +1,15 @@
 import 'dart:math';
 
-import 'package:cosmos_data/bloc/planet_bloc/planet_bloc.dart';
-import 'package:cosmos_data/data/models/planet_model.dart';
-import 'package:cosmos_data/screens/detail_screen/detail_page.dart';
-import 'package:cosmos_data/screens/home_screen/widgets/blocFeatures_item.dart';
-import 'package:cosmos_data/screens/home_screen/widgets/block_text.dart';
-import 'package:cosmos_data/screens/home_screen/widgets/custom_appbar.dart';
-import 'package:cosmos_data/screens/home_screen/widgets/custom_planetItem.dart';
-import 'package:cosmos_data/utils/app_icons.dart';
-import 'package:cosmos_data/utils/app_images.dart';
-import 'package:cosmos_data/utils/responsive_size.dart';
+import 'package:my_system/bloc/planet_bloc/planet_bloc.dart';
+import 'package:my_system/data/models/planet_model.dart';
+import 'package:my_system/screens/detail_screen/detail_page.dart';
+import 'package:my_system/screens/home_screen/widgets/blocFeatures_item.dart';
+import 'package:my_system/screens/home_screen/widgets/block_text.dart';
+import 'package:my_system/screens/home_screen/widgets/custom_appbar.dart';
+import 'package:my_system/screens/home_screen/widgets/custom_planetItem.dart';
+import 'package:my_system/utils/app_icons.dart';
+import 'package:my_system/utils/app_images.dart';
+import 'package:my_system/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

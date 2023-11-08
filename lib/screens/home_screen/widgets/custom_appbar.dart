@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
         Opacity(
           opacity: 0.5,
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.1576,
+            height: MediaQuery.of(context).size.height * 0.13,
             // clipBehavior: Clip.antiAlias,
             decoration: ShapeDecoration(
               color: const Color(0xFF091422),
@@ -50,35 +50,35 @@ class CustomAppBar extends StatelessWidget {
           ),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Opacity(
-                  opacity: 0.5,
-                  child: Container(
-                    height: 44,
-                    width: 44,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFF091422),
-                      shadows: const [
-                        BoxShadow(
-                          color: Color(0xFF000000),
-                          blurRadius: 16,
-                          offset: Offset(0, -4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(width: 2),
-                        borderRadius: BorderRadius.circular(28),
-                      ),
-                    ),
-                  ),
-                ),
-                Center(child: SvgPicture.asset(leading)),
-              ],
-            ),
+            // Stack(
+            //   alignment: Alignment.center,
+            //   children: [
+            //     Opacity(
+            //       opacity: 0.5,
+            //       child: Container(
+            //         height: 44,
+            //         width: 44,
+            //         clipBehavior: Clip.antiAlias,
+            //         decoration: ShapeDecoration(
+            //           color: const Color(0xFF091422),
+            //           shadows: const [
+            //             BoxShadow(
+            //               color: Color(0xFF000000),
+            //               blurRadius: 16,
+            //               offset: Offset(0, -4),
+            //               spreadRadius: 0,
+            //             )
+            //           ],
+            //           shape: RoundedRectangleBorder(
+            //             side: const BorderSide(width: 2),
+            //             borderRadius: BorderRadius.circular(28),
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //     Center(child: SvgPicture.asset(leading)),
+            //   ],
+            // ),
             Text(
               title,
               style: GoogleFonts.figtree(
@@ -90,43 +90,43 @@ class CustomAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            Visibility(
-              visible: action?.isNotEmpty ?? false,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Opacity(
-                    opacity: 0.5,
-                    child: Container(
-                      height: 44,
-                      width: 44,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: ShapeDecoration(
-                        color: const Color(0xFF091422),
-                        shadows: const [
-                          BoxShadow(
-                            color: Color(0xFF000000),
-                            blurRadius: 16,
-                            offset: Offset(0, -4),
-                            spreadRadius: 0,
-                          )
-                        ],
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(width: 2),
-                          borderRadius: BorderRadius.circular(28),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Center(
-                      child: SvgPicture.asset(
-                    action!,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                  )),
-                ],
-              ),
-            ),
+            // Visibility(
+            //   visible: action?.isNotEmpty ?? false,
+            //   child: Stack(
+            //     alignment: Alignment.center,
+            //     children: [
+            //       Opacity(
+            //         opacity: 0.5,
+            //         child: Container(
+            //           height: 44,
+            //           width: 44,
+            //           clipBehavior: Clip.antiAlias,
+            //           decoration: ShapeDecoration(
+            //             color: const Color(0xFF091422),
+            //             shadows: const [
+            //               BoxShadow(
+            //                 color: Color(0xFF000000),
+            //                 blurRadius: 16,
+            //                 offset: Offset(0, -4),
+            //                 spreadRadius: 0,
+            //               )
+            //             ],
+            //             shape: RoundedRectangleBorder(
+            //               side: const BorderSide(width: 2),
+            //               borderRadius: BorderRadius.circular(28),
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //       Center(
+            //           child: SvgPicture.asset(
+            //         action!,
+            //         colorFilter:
+            //             const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            //       )),
+            //     ],
+            //   ),
+            // ),
           ]),
         ),
       ],
