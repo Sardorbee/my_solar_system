@@ -13,7 +13,7 @@ class BlockText extends StatelessWidget {
       child: Stack(
         children: [
           Opacity(
-            opacity: 0.70,
+            opacity: 0.7,
             child: Container(
               decoration: ShapeDecoration(
                 color: const Color(0xFF091422),
